@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Shubhangi Goyal</title>
+<meta content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" name="viewport">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+<style type="text/css">
+@font-face{font-family:Autography;font-style:normal;font-weight:400;src:local("Autography"),url(Autography.otf);font-display:swap}
+@font-face{font-family:Nunito;font-style:normal;font-weight:400;src:local("Nunito"),url(Nunito-Regular.ttf);font-display:swap}
+@font-face{font-family:Nunito;font-style:italic;font-weight:400;src:local("Nunito"),url(Nunito-Italic.ttf);font-display:swap}
+@font-face{font-family:Nunito;font-style:normal;font-weight:bold;src:local("Nunito"),url(Nunito-Bold.ttf);font-display:swap}
+::-webkit-scrollbar{width:8px;height:8px;border-radius:8px;}
+::-webkit-scrollbar-thumb{background:#868e96;border-radius:8px;}
+*{box-sizing:border-box;}
+html,body{scroll-behavior:smooth;}
+body{font:19px 'Nunito',sans-serif;margin:0;transition-duration:0.2s;overflow-x:hidden;color:#505050;}
+
+header{width:275px;height:100%;position:fixed;left:0;top:0;border-right-width:1px;border-right-color:lightGrey;border-right-style:solid;padding:25px;z-index:1;}
+hr{margin:1.75rem 0;border:0;border-top:1px solid lightGrey;max-width:1024px;}
+button{font-size:20px;padding:14px;outline:0;color:#505050;cursor:pointer;}
+
+header,.main:nth-child(even){background-color:#fbfbfb;}
+.logo,footer{font-family:Autography;font-size:32px;color:#61dafb;font-weight:bold;}
+header p{margin:0;}
+header ul{list-style-type:none;padding:0;}
+header ul,header p:last-child{font-size:1.25rem;}
+header ul li{padding:3.5px 0;margin:10px 0;width:fit-content;transition-duration:0.2s;border-bottom-color:transparent;border-bottom-style:solid;border-bottom-width:2px;}
+header ul li:hover{border-bottom-color:#505050;}
+header ul li.active{padding:0 0 7px 0;color:#61dafb;border-bottom-color:#61dafb;}
+header ul a{color:inherit;font-weight:600;text-decoration:none;}
+header p:last-child i{padding:6px 16px;box-shadow:0 1px 15px rgba(0,0,0,0.3), 0 1px 6px rgba(0,0,0,0.3);border-radius:40px;cursor:pointer;}
+
+main{width:calc(100vw - 275px);margin-left:275px;}
+.main{min-height:calc(100vh - 100px);position:relative;}
+.verticalCentre{position:absolute;top:50%;transform:translateY(-50%);width:100%;}
+.homme{padding:0 60px;min-height:100vh;}
+.typing{color:black;font-size:9vh;height:216px;margin:0;text-transform:uppercase;}
+.typing .cursor.blink{animation:blinking 0.5s linear 0s infinite;}
+.social-media{font-size:1.25rem;margin-top:20px;}
+.social-media a{color:inherit;}
+.social-media i{width:2rem;height:2rem;padding:0.33rem;margin:0 10px 10px 0;display:inline-block;text-align:center;transition-duration:0.2s;border-radius:5px;}
+.social-media i:hover{color:white;}
+.fa-github:hover{background-color:#333333;}
+.fa-linkedin-in:hover{background-color:#0e76a8;}
+.fa-facebook-f:hover{background-color:#3b5998;}
+.fa-instagram:hover{background-color:#f2003c;}
+.fa-twitter:hover{background-color:#00acee;}
+@keyframes blinking{ 0%{opacity:0} 50%{opacity:.5} 100%{opacity:1} }
+.main>div button{background-image:linear-gradient(45deg,#61dafb 50%,transparent 50%);background-position:100%;background-size:400%;transition:background 500ms ease-in-out;background-color:transparent;border:2px solid #61dafb;width:260px;margin:10px 0;border-radius:40px;}
+.main>div button:hover{background-position:0;color:white;transition-duration:0.5s;}
+</style>
+</head>
+
+<body>
+<header>
+	<p class="logo">Shubhangi Goyal</p>
+	<p>Web Developer</p>
+	<p>UX-UI Designer</p>
+	<p>Content Writer</p>
+
+	<hr>
+
+	<ul>
+		<a href="#home"><li class="active">HOME</li></a>
+		<a href="#home"><li>HOME</li></a>
+		<a href="#home"><li>HOME</li></a>
+		<a href="#home"><li>HOME</li></a>
+		<a href="#home"><li>HOME</li></a>
+		<a href="#home"><li>HOME</li></a>
+	</ul>
+
+	<hr>
+
+	<p>Theme &nbsp; <i class="fas fa-sun changeTheme" onclick="changeTheme()"></i></p>
+</header>
+
+<main>
+	<!-- HOME -->
+	<div id="home" class="main homme">
+		<div class="verticalCentre">
+			<h1 class="typing">I AM<br><span id="sex"></span> <span class="cursor">_</span></h1>
+			<hr>
+			<div class="social-media">
+				<a href="https://github.com/faisalAkhtar/" target="_blank"><i class="fab fa-github"></i></a>
+				<a href="https://www.linkedin.com/in/faisallakhtarr/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+				<a href="https://www.instagram.com/faisallakhtarr/" target="_blank"><i class="fab fa-instagram"></i></a>
+				<a href="https://twitter.com/faisallakhtarr/" target="_blank"><i class="fab fa-twitter"></i></a>
+				<a href="https://www.facebook.com/faisallakhtarr/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+			</div>
+			<a href="mailto:goyalshubhangi72@gmail.com"><button>Get in touch</button></a>
+		</div>
+	</div>
+</main>
+
+<script type="text/javascript">
+let texts = ["Shubhangi", "UX-UI Designer", "Web Developer"], i = 0;
+
+var writeCursor, writeText,
+	eraseText, eraseCursor
+
+function write() {
+	if (writeCursor < writeText.length) {
+		document.querySelector(".cursor").classList.remove("blink")
+		if(writeText.charAt(writeCursor)!="/")	document.querySelector("#sex").innerHTML += writeText.charAt(writeCursor)
+										else	document.querySelector("#sex").innerHTML += "<br>"
+		writeCursor++
+		setTimeout(write, 100)
+	} else {
+		document.querySelector(".cursor").classList.add("blink")
+		setTimeout(erase, 2000)
+	}
+}
+
+function erase() {
+	if(eraseCursor > 0) {
+		document.querySelector(".cursor").classList.remove("blink")
+		document.querySelector("#sex").innerHTML = document.querySelector("#sex").innerHTML.substring(0,document.querySelector("#sex").innerHTML.length-1)
+		eraseCursor--
+		setTimeout(erase, 100)
+	} else {
+		document.querySelector(".cursor").classList.add("blink")
+		setTimeout( function() {
+			initiateSequence(texts[(i++)%3])
+		}, 500)
+	}
+}
+
+function initiateSequence(txt) {
+	writeCursor = 0
+	writeText = txt
+	eraseText = writeText
+	eraseCursor = writeText.length
+	write()
+}
+
+initiateSequence(texts[i++])
+</script>
+</body>
+</html>
