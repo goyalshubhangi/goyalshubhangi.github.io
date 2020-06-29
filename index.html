@@ -53,6 +53,13 @@ main{width:calc(100vw - 275px);margin-left:275px;}
 .container{width:1024px;margin:0 auto;padding-top:3rem;}
 .headerText{font-size:2.5rem;font-weight:normal;line-height:1.2;text-align:center;margin-bottom:0.25rem;}
 .underScore{width:180px;height:3px;border-radius:3px;margin:0 auto;background-color:#61dafb;}
+.flexBox{display:flex;flex-wrap:wrap;width:100%;margin-top:1.5rem;}
+.flexBox .column{flex:.5}
+.flexBox .column img{width:100%;position:relative;top:50%;transform:translateY(-50%);}
+.textBox{padding:20px 0 20px 20px;}
+.textBox h1{font-weight:normal;}
+.textBox h6{font-size:100%;}
+.underScoreAnimation{text-decoration:underline;text-underline-position:under;cursor:pointer;}
 
 footer{text-align:center;}
 
@@ -111,6 +118,24 @@ body.dark header p:last-child i{background-color:#10151b;}
 		<div class="container">
 			<h1 class="headerText">About Me</h1>
 			<div class="underScore"></div>
+
+			<div class="flexBox">
+				<div class="column">
+					<img src="Jhanjhii.jpg">
+				</div>
+				<div class="column textBox">
+					<h1>I make <span class="underScoreAnimation">things</span> <br> that <strong> make</strong> a <span class="underScoreAnimation">difference</span>.</h1>
+					<p>
+						Hi, my name is Shubhangi Goyal.
+						<br><br>
+						I'm basically a really creative, fun and talented girl. I'm also an expert front-end web developer who's really good in Vanilla JS. I've been coding for 3 years now.
+						<br><br>
+						I’m very passionate about building excellent software that improves the lives of those around me. So I create powerful software for clients ranging from your friendly neighbour all the way to large corporations.
+						<br><br>
+						When I'm not smacking a keyboard, you can bet I'm either bakign a cake or making momos, eating or spending time with my family.
+					</p>
+				</div>
+			</div>
 		</div>
 	</div>
 
