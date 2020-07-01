@@ -14,7 +14,7 @@
 ::-webkit-scrollbar-thumb{background:#868e96;border-radius:8px;}
 *{box-sizing:border-box;}
 html,body{scroll-behavior:smooth;}
-body{font:19px 'Nunito',sans-serif;margin:0;transition-duration:0.2s;overflow-x:hidden;color:#505050;}
+body{font:20px 'Nunito',sans-serif;margin:0;transition-duration:0.2s;overflow-x:hidden;color:#505050;}
 
 header{width:275px;height:100%;position:fixed;left:0;top:0;border-right-width:1px;border-right-color:lightGrey;border-right-style:solid;padding:25px;z-index:1;}
 hr{margin:1.75rem 0;border:0;border-top:1px solid lightGrey;max-width:1024px;}
@@ -35,7 +35,7 @@ main{width:calc(100vw - 275px);margin-left:275px;}
 .main{min-height:calc(100vh - 100px);position:relative;}
 .verticalCentre{position:absolute;top:50%;transform:translateY(-50%);width:100%;}
 .homme{padding:0 60px;min-height:100vh;}
-.typing{color:black;font-size:9vh;height:216px;margin:0;text-transform:uppercase;}
+.typing{color:black;font-size:9vh;height:20vh;margin:0;text-transform:uppercase;}
 .typing .cursor.blink{animation:blinking 0.5s linear 0s infinite;}
 .social-media{font-size:1.25rem;margin-top:20px;}
 .social-media a{color:inherit;}
@@ -50,19 +50,47 @@ main{width:calc(100vw - 275px);margin-left:275px;}
 .main>div button{background-image:linear-gradient(45deg,#61dafb 50%,transparent 50%);background-position:100%;background-size:400%;transition:background 500ms ease-in-out;background-color:transparent;border:2px solid #61dafb;width:260px;margin:10px 0;border-radius:40px;}
 .main>div button:hover{background-position:0;color:white;transition-duration:0.5s;}
 
-.container{width:1024px;margin:0 auto;padding-top:3rem;}
+.container{max-width:1140px;width:100%;margin:0 auto;padding-top:3rem;}
 .headerText{font-size:2.5rem;font-weight:normal;line-height:1.2;text-align:center;margin-bottom:0.25rem;}
 .underScore{width:180px;height:3px;border-radius:3px;margin:0 auto;background-color:#61dafb;}
 .flexBox{display:flex;flex-wrap:wrap;width:100%;margin-top:1.5rem;}
 .flexBox .column{flex:.5}
 .flexBox .column img{width:100%;position:relative;top:50%;transform:translateY(-50%);}
-.textBox{padding:20px 0 20px 20px;}
-.textBox h1{font-weight:normal;}
-.textBox h6{font-size:100%;}
+.textBox{padding:20px;}
+.aboutme .flexBox .textBox{padding:20px 0 20px 20px;}
+.textBox h1{font-weight:normal;margin:0;line-height:1.2;}
+.textBox h6{font-size:24px;}
 .textBox a{text-decoration:none;color:inherit;cursor:pointer;}
 .textBox a:hover{text-decoration:underline;}
 .textBox svg{fill:#505050;}
 .underScoreAnimation{text-decoration:underline;text-underline-position:under;cursor:pointer;}
+
+.servicessDiv{position:relative;}
+.servicessDiv:before{content:"";display:block;width:2px;height:100%;background:#c6c6c6;margin:0 auto;position:absolute;top:0;left:0;right:0;}
+.serviceRow{position:relative;clear:both;overflow:hidden;margin-bottom:40px;}
+.serviceIcon{width:18px;height:18px;line-height:18px;margin:auto;position:absolute;top:0;left:0;bottom:0;right:0;}
+.serviceIcon:before,.serviceIcon:after{content:"";width:100%;height:100%;border-radius:50%;position:absolute;left:0;transition:all 0.33s ease-out 0s;}
+.serviceIcon:before{background:#ffffff;border:2px solid #232323;left:3px;}
+.serviceIcon:after{border:2px solid #c6c6c6;left:-3px;}
+.serviceRow:hover .serviceIcon:before{left:-3px;}
+.serviceRow:hover .serviceIcon:after{left:3px;}
+.serviceImg,.serviceTxt{width:50%;}
+.serviceImg{margin-top:50px;position:relative;}
+.serviceImg:before{content:"";width:36.5%;height:2px;background:#c6c6c6;margin:auto 0;position:absolute;top:0;right:10px;bottom:0;}
+.serviceRow:nth-child(even) .serviceImg{float:right;}
+.serviceRow:nth-child(even) .serviceImg:before{left:10px;}
+.serviceRow:nth-child(odd) .serviceImg{float:left;}
+.serviceRow:nth-child(odd) .serviceImg:before{right:10px;}
+.serviceRow:nth-child(even) .serviceTxt{float:left;padding:20px 50px 20px 0px;text-align:right;}
+.serviceRow:nth-child(odd) .serviceTxt{float:right;padding:20px 0px 20px 50px;text-align:left;}
+.serviceImg img{width:100px;}
+.serviceTxt h3{margin:0 0 15px 0;}
+.innerServiceImg{width:125px;height:125px;font-size:16px;text-align:center;margin:auto;z-index:1;}
+.innerServiceImg:before,.innerServiceImg:after{content:"";width:125px;height:125px;margin:0 auto;border-radius:50%;position:absolute;top:0;left:0;right:0;transition:all 0.33s ease-out 0s;}
+.innerServiceImg:before{border:2px solid #5a5a5a;left:-6px;}
+.innerServiceImg:after{border:2px solid #c6c6c6;left:6px;}
+.serviceRow:hover .innerServiceImg:before{left:6px;}
+.serviceRow:hover .innerServiceImg:after{left:-6px;}
 
 footer{text-align:center;}
 
@@ -145,10 +173,64 @@ body.dark .textBox svg{fill:white;}
 
 
 	<!-- services -->
-	<div id="services" class="main">
+	<div id="services" class="main servicess">
 		<div class="container">
 			<h1 class="headerText">Services</h1>
 			<div class="underScore"></div>
+
+			<div class="servicessDiv">
+				<div class="serviceRow">
+					<div class="serviceIcon"></div>
+					<div class="serviceImg">
+						<div class="innerServiceImg">
+							<img src="https://goyalshubhangi.github.io/designing/assets/img/Coffee.png">
+						</div>
+					</div>
+					<div class="serviceTxt">
+						<h3>Front-end Development</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip</p>
+					</div>
+				</div>
+
+				<div class="serviceRow">
+					<div class="serviceIcon"></div>
+					<div class="serviceImg">
+						<div class="innerServiceImg">
+							<img src="https://goyalshubhangi.github.io/designing/assets/img/Coffee.png">
+						</div>
+					</div>
+					<div class="serviceTxt">
+						<h3>Back-end Development</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip</p>
+					</div>
+				</div>
+
+				<div class="serviceRow">
+					<div class="serviceIcon"></div>
+					<div class="serviceImg">
+						<div class="innerServiceImg">
+							<img src="https://goyalshubhangi.github.io/designing/assets/img/Coffee.png">
+						</div>
+					</div>
+					<div class="serviceTxt">
+						<h3>User Interface Design</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip</p>
+					</div>
+				</div>
+
+				<div class="serviceRow">
+					<div class="serviceIcon"></div>
+					<div class="serviceImg">
+						<div class="innerServiceImg">
+							<img src="https://goyalshubhangi.github.io/designing/assets/img/Coffee.png">
+						</div>
+					</div>
+					<div class="serviceTxt">
+						<h3>User Experience Expertise</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip</p>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 
@@ -168,7 +250,7 @@ body.dark .textBox svg{fill:white;}
 			<h1 class="headerText">Reach Me</h1>
 			<div class="underScore"></div>
 
-			<div class="textBox" style="text-align:center;">
+			<div class="textBox">
 				<p>You have a finished design and a clear picture of how your website should work?<br>or you've got a rough idea of your website / web application and you need support with the design and implementation?<br><br>Or maybe you have an existing website / web application but you are not satisfied with it?<br><br>Wherever you are with your idea or your project, I'll be happy to help.</p>
 				<h6>Ready to make a difference?</h6>
 			</div>
@@ -184,7 +266,7 @@ body.dark .textBox svg{fill:white;}
 						<a href="https://www.facebook.com/faisallakhtarr/" target="_blank"><i class="fab fa-facebook-f"></i></a>
 					</div>
 				</div>
-				<div class="column textBox" style="text-align:right;">
+				<div class="column textBox">
 					<a href="tel:+919876xxxxxx"><h1>+91 9876 xxx xxx</h1></a>
 					<p><svg viewBox="0 0 12 16" version="1.1" width="20" height="18" aria-hidden="true"><path fill-rule="evenodd" d="M6 0C2.69 0 0 2.5 0 5.5 0 10.02 6 16 6 16s6-5.98 6-10.5C12 2.5 9.31 0 6 0zm0 14.55C4.14 12.52 1 8.44 1 5.5 1 3.02 3.25 1 6 1c1.34 0 2.61.48 3.56 1.36.92.86 1.44 1.97 1.44 3.14 0 2.94-3.14 7.02-5 9.05zM8 5.5c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"></path></svg> New Delhi</p>
 				</div>
