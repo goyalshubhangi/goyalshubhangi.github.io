@@ -124,7 +124,8 @@ body.dark .textBox svg{fill:white;}
 		<a href="#home"><li class="active">HOME</li></a>
 		<a href="#about"><li>ABOUT</li></a>
 		<a href="#services"><li>SERVICES</li></a>
-		<a href="#technologies"><li>TECHNOLOGIES</li></a>
+		<a href="#tools"><li>TOOLS</li></a>
+		<a href="#work"><li>WORK</li></a>
 		<a href="#reachme"><li>REACH ME</li></a>
 	</ul>
 
@@ -241,8 +242,8 @@ body.dark .textBox svg{fill:white;}
 	</div>
 
 
-	<!-- technologies -->
-	<div id="technologies" class="main toolls">
+	<!-- tools -->
+	<div id="tools" class="main toolls">
 		<div class="container">
 			<h1 class="headerText">Skills & Tools</h1>
 			<div class="underScore"></div>
@@ -341,6 +342,15 @@ body.dark .textBox svg{fill:white;}
 					<li>Hosting and maintaining websites on virtual machine instances along with integration of databases</li>
 				</ul>
 			</div>
+		</div>
+	</div>
+
+
+	<!-- recentworks -->
+	<div id="work" class="main">
+		<div class="container">
+			<h1 class="headerText">Recent Works</h1>
+			<div class="underScore"></div>
 		</div>
 	</div>
 
@@ -456,11 +466,14 @@ function visibleDiv () {
 	else if(isInViewport( document.querySelector('#services'), 100)) {
 		mi.children[2].children[0].classList.add("active")
 	}
-	else if(isInViewport( document.querySelector('#technologies'), 100)) {
+	else if(isInViewport( document.querySelector('#tools'), 100)) {
 		mi.children[3].children[0].classList.add("active")
 	}
-	else if(isInViewport( document.querySelector('#reachme'), 100)) {
+	else if(isInViewport( document.querySelector('#work'), 100)) {
 		mi.children[4].children[0].classList.add("active")
+	}
+	else if(isInViewport( document.querySelector('#reachme'), 100)) {
+		mi.children[5].children[0].classList.add("active")
 	}
 }
 
