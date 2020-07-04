@@ -5,6 +5,7 @@
 <title>Shubhangi Goyal</title>
 <meta content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" name="viewport">
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="swiper.min.css">
 <style type="text/css">
 @font-face{font-family:Autography;font-style:normal;font-weight:400;src:local("Autography"),url(Autography.otf);font-display:swap}
 @font-face{font-family:Nunito;font-style:normal;font-weight:400;src:local("Nunito"),url(Nunito-Regular.ttf);font-display:swap}
@@ -50,7 +51,7 @@ main{width:calc(100vw - 275px);margin-left:275px;}
 .main>div button{background-image:linear-gradient(45deg,#61dafb 50%,transparent 50%);background-position:100%;background-size:400%;transition:background 500ms ease-in-out;background-color:transparent;border:2px solid #61dafb;width:260px;margin:10px 0;border-radius:40px;}
 .main>div button:hover{background-position:0;color:white;transition-duration:0.5s;}
 
-.container{max-width:1140px;width:100%;margin:0 auto;padding:3rem 0 0.5rem 0;}
+.container{max-width:1140px;width:100%;margin:0 auto;padding:3rem 1rem 0.5rem 1rem;}
 .headerText{font-size:2.5rem;font-weight:normal;line-height:1.2;text-align:center;margin-bottom:0.25rem;}
 .underScore{width:180px;height:3px;border-radius:3px;margin:0 auto;background-color:#61dafb;}
 .flexBox{display:flex;flex-wrap:wrap;width:100%;margin-top:1.5rem;}
@@ -66,17 +67,17 @@ main{width:calc(100vw - 275px);margin-left:275px;}
 .underScoreAnimation{text-decoration:underline;text-underline-position:under;cursor:pointer;}
 
 .servicessDiv{position:relative;}
-.servicessDiv:before{content:"";display:block;width:2px;height:100%;background:#c6c6c6;margin:0 auto;position:absolute;top:0;left:0;right:0;}
+.servicessDiv:before{content:"";display:block;width:2px;height:100%;background:#61dafb;margin:0 auto;position:absolute;top:0;left:0;right:0;}
 .serviceRow{position:relative;clear:both;overflow:hidden;margin-bottom:40px;}
 .serviceIcon{width:18px;height:18px;line-height:18px;margin:auto;position:absolute;top:0;left:0;bottom:0;right:0;}
 .serviceIcon:before,.serviceIcon:after{content:"";width:100%;height:100%;border-radius:50%;position:absolute;left:0;transition:all 0.33s ease-out 0s;}
 .serviceIcon:before{background:#ffffff;border:2px solid #232323;left:3px;}
-.serviceIcon:after{border:2px solid #c6c6c6;left:-3px;}
+.serviceIcon:after{border:2px solid #61dafb;left:-3px;}
 .serviceRow:hover .serviceIcon:before{left:-3px;}
 .serviceRow:hover .serviceIcon:after{left:3px;}
 .serviceImg,.serviceTxt{width:50%;}
 .serviceImg{margin-top:50px;position:relative;}
-.serviceImg:before{content:"";width:36.5%;height:2px;background:#c6c6c6;margin:auto 0;position:absolute;top:0;right:10px;bottom:0;}
+.serviceImg:before{content:"";width:36.5%;height:2px;background:#61dafb;margin:auto 0;position:absolute;top:0;right:10px;bottom:0;}
 .serviceRow:nth-child(even) .serviceImg{float:right;}
 .serviceRow:nth-child(even) .serviceImg:before{left:10px;}
 .serviceRow:nth-child(odd) .serviceImg{float:left;}
@@ -88,7 +89,7 @@ main{width:calc(100vw - 275px);margin-left:275px;}
 .innerServiceImg{width:125px;height:125px;font-size:16px;text-align:center;margin:auto;z-index:1;}
 .innerServiceImg:before,.innerServiceImg:after{content:"";width:125px;height:125px;margin:0 auto;border-radius:50%;position:absolute;top:0;left:0;right:0;transition:all 0.33s ease-out 0s;}
 .innerServiceImg:before{border:2px solid #5a5a5a;left:-6px;}
-.innerServiceImg:after{border:2px solid #c6c6c6;left:6px;}
+.innerServiceImg:after{border:2px solid #61dafb;left:6px;}
 .serviceRow:hover .innerServiceImg:before{left:6px;}
 .serviceRow:hover .innerServiceImg:after{left:-6px;}
 
@@ -97,6 +98,16 @@ main{width:calc(100vw - 275px);margin-left:275px;}
 .toollsList li{display:inline-block;margin:10px;transition-duration:0.2s;cursor:pointer;}
 .toollsList svg{height:4rem;text-align:center;display:inline;transform:translateY(5px);}
 .toollsList p{font-size:14px;margin:0;}
+
+.swiper-container{margin-top:1.5rem;padding:0 80px;}
+.swiper-slide{padding-bottom:20px;display:flex;flex-wrap:wrap;}
+.swiper-slide h2{margin:10px 0;font-size:40px;}
+.swiper-slide h5{font-size:120%;}
+.swiper-slide img{width:100%;}
+.swiper-img{text-align:center;}
+.swiper-img{flex:70%;}
+.swiper-desc{flex:30%;padding-right:20px;position:relative;}
+.swiper-img{margin-top:50px;position:relative;}
 
 footer{text-align:center;}
 
@@ -108,6 +119,7 @@ body.dark .typing{color:white;}
 body.dark button{color:white}
 body.dark header p:last-child i{background-color:#10151b;}
 body.dark .textBox svg{fill:white;}
+body.dark .swiper-pagination-bullet{background:#ffffff;}
 </style>
 </head>
 
@@ -249,7 +261,7 @@ body.dark .textBox svg{fill:white;}
 			<div class="underScore"></div>
 
 			<div class="toollsDiv">
-				<p>The skills, tools and technologies i use to bring your products to life</p>
+				<p>With a variety of technologies to work with, you can be sure to get the very best</p>
 				<ul class="toollsList">
 					<li title="html-5">
 						<i class="fab fa-html5"></i>
@@ -351,6 +363,72 @@ body.dark .textBox svg{fill:white;}
 		<div class="container">
 			<h1 class="headerText">Recent Works</h1>
 			<div class="underScore"></div>
+
+			<div class="swiper-container">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<div class="swiper-desc">
+							<div style="position:absolute;width:100%;top:50%;transform:translateY(-50%);">
+								<h2>Our Illustrations</h2>
+								<p>Website | May 2020</p>
+								<h5 class="underScoreAnimation">Visit</h5>
+							</div>
+						</div>
+						<div class="swiper-img">
+							<img src="1.png">
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="swiper-desc">
+							<div style="position:absolute;width:100%;top:50%;transform:translateY(-50%);">
+								<h2>Sociovation</h2>
+								<p>Website | September 2019</p>
+								<h5 class="underScoreAnimation">Visit</h5>
+							</div>
+						</div>
+						<div class="swiper-img">
+							<img src="2.png">
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="swiper-desc">
+							<div style="position:absolute;width:100%;top:50%;transform:translateY(-50%);">
+								<h2>George Public School</h2>
+								<p>Website | January 2020</p>
+								<h5 class="underScoreAnimation">Visit</h5>
+							</div>
+						</div>
+						<div class="swiper-img">
+							<img src="3.png">
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="swiper-desc">
+							<div style="position:absolute;width:100%;top:50%;transform:translateY(-50%);">
+								<h2>Harry Potter</h2>
+								<p>Illustration | April 2020</p>
+								<h5 class="underScoreAnimation">View</h5>
+							</div>
+						</div>
+						<div class="swiper-img">
+							<img src="4.png">
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="swiper-desc">
+							<div style="position:absolute;width:100%;top:50%;transform:translateY(-50%);">
+								<h2>Faisal Akhtar</h2>
+								<p>Illustration | May 2020</p>
+								<h5 class="underScoreAnimation">View</h5>
+							</div>
+						</div>
+						<div class="swiper-img">
+							<img src="5.png">
+						</div>
+					</div>
+				</div>
+				<div class="swiper-pagination"></div>
+			</div>
 		</div>
 	</div>
 
@@ -388,6 +466,7 @@ body.dark .textBox svg{fill:white;}
 	<footer>&copy; 2020. With love from Shubhangi</footer>
 </main>
 
+<script src="swiper.min.js"></script>
 <script type="text/javascript">
 let texts = ["Shubhangi", "UX-UI Designer", "Web Developer"], i = 0;
 
@@ -480,6 +559,25 @@ function visibleDiv () {
 window.onscroll = function() {
 	visibleDiv()
 }
+
+var swiper = new Swiper('.swiper-container', {
+	effect: 'cube',
+	grabCursor: true,
+	cubeEffect: {
+		shadow: true,
+		slideShadows: true,
+		shadowOffset: 20,
+		shadowScale: 0.94,
+	},
+	// loop: true,
+	keyboard: {
+		enabled: true,
+	},
+	pagination: {
+		el: '.swiper-pagination',
+		dynamicBullets: true,
+	}
+});
 </script>
 </body>
 </html>
