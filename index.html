@@ -99,14 +99,14 @@ main{width:calc(100vw - 275px);margin-left:275px;}
 .toollsList svg{height:4rem;text-align:center;display:inline;transform:translateY(5px);}
 .toollsList p{font-size:14px;margin:0;}
 
-.swiper-container{margin-top:1.5rem;padding:0 80px;}
-.swiper-slide{padding-bottom:20px;display:flex;flex-wrap:wrap;}
-.swiper-slide h2{margin:10px 0;font-size:40px;}
-.swiper-slide h5{font-size:120%;}
+.swiper-container{margin-top:1.5rem;}
+.swiper-slide{padding:0 50px 20px 50px;display:flex;flex-wrap:wrap;box-shadow:0 20px 30px -10px rgba(0,0,0,.2);background-color:inherit;}
+.swiper-slide h2{margin:10px 0;font-size:36px;line-height:40px;height:120px;}
+.swiper-slide h5{font-size:120%;margin:3.33em 0 0 0;color:#505050;}
 .swiper-slide img{width:100%;}
 .swiper-img{text-align:center;}
 .swiper-img{flex:70%;}
-.swiper-desc{flex:30%;padding-right:20px;position:relative;}
+.swiper-desc{flex:calc(30% - 20px);margin-right:20px;position:relative;}
 .swiper-img{margin-top:50px;position:relative;}
 
 footer{text-align:center;}
@@ -120,6 +120,7 @@ body.dark button{color:white}
 body.dark header p:last-child i{background-color:#10151b;}
 body.dark .textBox svg{fill:white;}
 body.dark .swiper-pagination-bullet{background:#ffffff;}
+body.dark .swiper-slide h5{color:#f1f1f1;}
 </style>
 </head>
 
@@ -371,7 +372,7 @@ body.dark .swiper-pagination-bullet{background:#ffffff;}
 							<div style="position:absolute;width:100%;top:50%;transform:translateY(-50%);">
 								<h2>Our Illustrations</h2>
 								<p>Website | May 2020</p>
-								<h5 class="underScoreAnimation">Visit</h5>
+								<a target="_blank" href="https://goyalshubhangi.github.io/designing/"><h5 class="underScoreAnimation">Visit</h5></a>
 							</div>
 						</div>
 						<div class="swiper-img">
@@ -383,7 +384,7 @@ body.dark .swiper-pagination-bullet{background:#ffffff;}
 							<div style="position:absolute;width:100%;top:50%;transform:translateY(-50%);">
 								<h2>Sociovation</h2>
 								<p>Website | September 2019</p>
-								<h5 class="underScoreAnimation">Visit</h5>
+								<a target="_blank" href="https://sociovation.github.io/"><h5 class="underScoreAnimation">Visit</h5></a>
 							</div>
 						</div>
 						<div class="swiper-img">
@@ -395,7 +396,7 @@ body.dark .swiper-pagination-bullet{background:#ffffff;}
 							<div style="position:absolute;width:100%;top:50%;transform:translateY(-50%);">
 								<h2>George Public School</h2>
 								<p>Website | January 2020</p>
-								<h5 class="underScoreAnimation">Visit</h5>
+								<a target="_blank" href="https://georgepublicschool.com/"><h5 class="underScoreAnimation">Visit</h5></a>
 							</div>
 						</div>
 						<div class="swiper-img">
@@ -407,7 +408,7 @@ body.dark .swiper-pagination-bullet{background:#ffffff;}
 							<div style="position:absolute;width:100%;top:50%;transform:translateY(-50%);">
 								<h2>Harry Potter</h2>
 								<p>Illustration | April 2020</p>
-								<h5 class="underScoreAnimation">View</h5>
+								<a target="_blank" href="https://goyalshubhangi.github.io/designing/SVGs/Harry%20Potter.svg"><h5 class="underScoreAnimation">View</h5></a>
 							</div>
 						</div>
 						<div class="swiper-img">
@@ -419,7 +420,7 @@ body.dark .swiper-pagination-bullet{background:#ffffff;}
 							<div style="position:absolute;width:100%;top:50%;transform:translateY(-50%);">
 								<h2>Faisal Akhtar</h2>
 								<p>Illustration | May 2020</p>
-								<h5 class="underScoreAnimation">View</h5>
+								<a target="_blank" href="https://goyalshubhangi.github.io/designing/SVGs/Faisal%20-%20sunset.svg"><h5 class="underScoreAnimation">View</h5></a>
 							</div>
 						</div>
 						<div class="swiper-img">
@@ -428,6 +429,9 @@ body.dark .swiper-pagination-bullet{background:#ffffff;}
 					</div>
 				</div>
 				<div class="swiper-pagination"></div>
+
+			    <div class="swiper-button-next"></div>
+			    <div class="swiper-button-prev"></div>
 			</div>
 		</div>
 	</div>
@@ -567,15 +571,17 @@ var swiper = new Swiper('.swiper-container', {
 		shadow: true,
 		slideShadows: true,
 		shadowOffset: 20,
-		shadowScale: 0.94,
+		shadowScale: 0.94
 	},
-	// loop: true,
 	keyboard: {
-		enabled: true,
+		enabled: true
+	},navigation: {
+		nextEl: '.swiper-button-next',
+		prevEl: '.swiper-button-prev'
 	},
 	pagination: {
 		el: '.swiper-pagination',
-		dynamicBullets: true,
+		dynamicBullets: true
 	}
 });
 </script>
