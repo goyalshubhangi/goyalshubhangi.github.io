@@ -17,11 +17,12 @@
 html,body{scroll-behavior:smooth;}
 body{font:20px 'Nunito',sans-serif;margin:0;transition-duration:0.2s;overflow-x:hidden;color:#505050;}
 
-header{width:275px;height:100%;position:fixed;left:0;top:0;border-right-width:1px;border-right-color:lightGrey;border-right-style:solid;padding:25px;z-index:1;}
+header{width:275px;height:100%;position:fixed;left:0;top:0;border-right-width:1px;border-right-color:lightGrey;border-right-style:solid;padding:25px;z-index:3;}
 hr{margin:1.25rem 0;border:0;border-top:1px solid lightGrey;max-width:1024px;}
 button{font-size:20px;padding:14px;outline:0;color:#505050;cursor:pointer;}
 
 header,.main:nth-child(even){background-color:#fbfbfb;}
+nav{display:none;}
 .logo,footer{font-family:Autography;font-size:32px;color:#61dafb;font-weight:bold;}
 header p{margin:0;}
 header ul{list-style-type:none;padding:0;}
@@ -118,7 +119,16 @@ footer{text-align:center;}
 }
 
 @media screen and (max-width:1050px) {
-	header{width:100%;height:100vh;position:fixed;top:-200%;text-align:center;}
+	header{width:100%;height:100vh;position:fixed;left:200%;text-align:center;padding-top:50px;transition-duration:0.4s;}
+	header.visible{left:0;}
+	nav{display:block;width:100%;padding:10px 20px;position:fixed;z-index:2;background-color:white;}
+	nav p{margin:0;line-height:40px;}
+	.toggleMenu{position:fixed;right:20px;top:15px;transition-duration:0.4s;z-index:10;}
+	.bar1,.bar2,.bar3{width:25px;height:3px;background-color:#505050;margin:4px 0;transition:0.4s;border-radius:25px;}
+	.opened{transform:rotate(360deg);}
+	.opened .bar1{-webkit-transform:rotate(-45deg) translate(-5px,3px);transform:rotate(-45deg) translate(-5px,3px);}
+	.opened .bar2{opacity:0;}
+	.opened .bar3{-webkit-transform:rotate(45deg) translate(-6px,-5px);transform:rotate(45deg) translate(-6px,-5px);}
 	header ul li{margin:10px auto;}
 	main{width:100vw;margin-left:0;}
 	.verticalCentre{width:calc(100% - 40px);}
@@ -178,6 +188,8 @@ footer{text-align:center;}
 }
 
 body.dark{background-color:#10151b;color:#f1f1f1;}
+body.dark nav{background-color:#10151b;}
+body.dark .bar1,body.dark .bar2,body.dark .bar3{background-color:white;}
 body.dark hr{border-color:#5a5a5a;}
 body.dark header,body.dark .main:nth-child(even){background-color:#1c252d;border-color:#5a5a5a;}
 body.dark header ul li:hover{border-bottom-color:white;}
@@ -214,6 +226,16 @@ body.dark .swiper-slide h5{color:#f1f1f1;}
 
 	<p>Theme &nbsp; <i class="fas fa-moon changeTheme" onclick="changeTheme()"></i></p>
 </header>
+
+
+<nav>
+	<p class="logo">Shubhangi Goyal</p>
+</nav>
+<a class="toggleMenu" onclick="toggleMenu()">
+	<div class="bar1"></div>
+	<div class="bar2"></div>
+	<div class="bar3"></div>
+</a>
 
 <main>
 	<!-- HOME -->
@@ -669,6 +691,11 @@ var swiper = new Swiper('.swiper-container', {
 		dynamicBullets: true
 	}
 });
+
+function toggleMenu() {
+	document.querySelector(".toggleMenu").classList.toggle("opened")
+	document.querySelector("header").classList.toggle("visible")
+}
 </script>
 </body>
 </html>
