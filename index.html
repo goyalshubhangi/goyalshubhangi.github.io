@@ -13,7 +13,7 @@
 @font-face{font-family:Nunito;font-style:normal;font-weight:bold;src:local("Nunito"),url(Nunito-Bold.ttf);font-display:swap}
 ::-webkit-scrollbar{width:8px;height:8px;border-radius:8px;}
 ::-webkit-scrollbar-thumb{background:#868e96;border-radius:8px;}
-*{box-sizing:border-box;}
+*,*:after,*:before{box-sizing:border-box;-moz-box-sizing:border-box;}
 html,body{scroll-behavior:smooth;}
 body{font:20px 'Nunito',sans-serif;margin:0;transition-duration:0.2s;overflow-x:hidden;color:#505050;}
 
@@ -64,7 +64,18 @@ main{width:calc(100vw - 275px);margin-left:275px;}
 .textBox a{text-decoration:none;color:inherit;cursor:pointer;}
 .textBox a:hover{text-decoration:underline;}
 .textBox svg{fill:#505050;}
-.underScoreAnimation{text-decoration:underline;text-underline-position:under;cursor:pointer;display:inline-block;}
+.underScoreAnimation{cursor:pointer;display:inline-block;}
+.underScoreAnimation > span{text-decoration:none;z-index:1;position:relative;}
+.underScoreAnimation > span:before{content:"";background:#61dafb;position:absolute;width:100%;height:20%;bottom:20%;left:0;transform:scaleX(1);animation:0.25s forwards no-hover-v;z-index:-1;opacity:0.9;}
+.underScoreAnimation > span:hover:before,.underScoreAnimation > span:focus:before{animation:.25s forwards hover-v;forwards;}
+@keyframes hover-v{
+	0% {transform:scaleX(1);height:20%;bottom:20%;}
+	100%{transform:scaleX(1);height:100%;bottom:0%;}
+}
+@keyframes no-hover-v{
+	0%  {transform:scaleX(1);height:100%;bottom:0%;}
+	100% {transform:scaleX(1);height:20%;bottom:20%;}
+}
 
 .servicessDiv{position:relative;}
 .servicessDiv:before{content:"";display:block;width:2px;height:100%;background:#61dafb;margin:0 auto;position:absolute;top:0;left:0;right:0;}
@@ -94,8 +105,8 @@ main{width:calc(100vw - 275px);margin-left:275px;}
 .serviceRow:hover .innerServiceImg:after{left:-6px;}
 
 .toollsDiv{text-align:center;}
-.toollsList{font-size:4rem;list-style-type:none;padding:0;clear:both;overflow:hidden;max-width:768px;margin:0 auto;}
-.toollsList li{display:inline-block;margin:10px;transition-duration:0.1s;cursor:pointer;border-radius:5px;padding:0 5px;}
+.toollsList{font-size:4rem;list-style-type:none;padding:0;clear:both;overflow:hidden;max-width:768px;margin:0 auto;text-align:center !important;}
+.toollsList li{display:inline-block;margin:10px;transition-duration:0.1s;cursor:pointer;border-radius:5px;padding:0 5px;width:100px;}
 .toollsList li:hover{box-shadow:0 20px 30px -10px rgba(0,0,0,.2);}
 .toollsList svg{height:4rem;text-align:center;display:inline;transform:translateY(5px);}
 .toollsList p{font-size:14px;margin:0;}
@@ -180,7 +191,7 @@ footer{text-align:center;}
 	.verticalCentre{width:calc(100% - 120px);}
 	.homme{padding:0 60px;}
 	.aboutme .flexBox .textBox{padding:40px;}
-	.flexBox .column img{width:auto;max-height:500px;height:100vh;margin-right:auto;}
+	.flexBox .column img{width:auto;max-height:500px;height:calc(100vh - 40px);margin-right:auto;}
 
 	.servicess,.toolls,.worrk,.reachhme{padding-left:30px;padding-right:30px;}
 
@@ -260,10 +271,10 @@ body.dark .swiper-slide h5{color:#f1f1f1;}
 			<h1 class="typing">I AM<br><span id="sex"></span> <span class="cursor">_</span></h1>
 			<hr>
 			<div class="social-media">
-				<a href="https://github.com/faisalAkhtar/" target="_blank"><i class="fab fa-github"></i></a>
+				<a href="https://github.com/goyalshubhangi/" target="_blank"><i class="fab fa-github"></i></a>
 				<a href="https://www.linkedin.com/in/faisallakhtarr/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-				<a href="https://www.instagram.com/faisallakhtarr/" target="_blank"><i class="fab fa-instagram"></i></a>
-				<a href="https://www.facebook.com/faisallakhtarr/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+				<a href="https://instagram.com/shubhi_9991/" target="_blank"><i class="fab fa-instagram"></i></a>
+				<a href="https://facebook.com/shubhangi.goyal.969/" target="_blank"><i class="fab fa-facebook-f"></i></a>
 			</div>
 			<a href="mailto:goyalshubhangi72@gmail.com"><button>Get in touch</button></a>
 		</div>
@@ -281,7 +292,7 @@ body.dark .swiper-slide h5{color:#f1f1f1;}
 					<img src="Jhanjhii.jpg">
 				</div>
 				<div class="column textBox">
-					<h1>I make <span class="underScoreAnimation">things</span> <br> that <strong> make</strong> a <span class="underScoreAnimation">difference</span>.</h1>
+					<h1>I make <span class="underScoreAnimation"> <span>things</span> </span> <br> that <strong> make</strong> a <span class="underScoreAnimation"> <span>difference</span> </span>.</h1>
 					<p>
 						Hi, my name is Shubhangi Goyal.
 						<br><br>
@@ -390,10 +401,6 @@ body.dark .swiper-slide h5{color:#f1f1f1;}
 						<i class="fab fa-css3-alt"></i>
 						<p>css3</p>
 					</li>
-					<li title="sass">
-						<i class="fab fa-sass"></i>
-						<p>sass</p>
-					</li>
 					<li title="bootstrap">
 						<svg viewBox="0 0 128 128">
 						<path fill="currentColor" d="M75.701 65.603c-2.334-.768-5.694-.603-10.08-.603h-17.621v23h18.844c2.944 0 5.012-.315 6.203-.535 2.099-.376 3.854-1.104 5.264-1.982 1.409-.876 2.568-2.205 3.478-3.881.908-1.676 1.363-3.637 1.363-5.83 0-2.568-.658-4.54-1.975-6.436-1.316-1.896-3.141-2.965-5.476-3.733zM73.282 55.087c2.317-.688 4.064-1.89 5.239-3.487 1.176-1.598 1.763-3.631 1.763-6.044 0-2.286-.549-4.314-1.646-6.054s-2.662-2.413-4.699-3.056c-2.037-.641-5.53-.446-10.48-.446h-15.459v20h16.587c4.042 0 6.939-.38 8.695-.913zM126 18.625c0-9.182-7.443-16.625-16.625-16.625h-91.75c-9.182 0-16.625 7.443-16.625 16.625v91.75c0 9.182 7.443 16.625 16.625 16.625h91.75c9.182 0 16.625-7.443 16.625-16.625v-91.75zm-35.447 66.12c-1.362 2.773-3.047 4.911-5.052 6.415-2.006 1.504-4.521 2.78-7.544 3.548-3.022.769-6.728 1.292-11.113 1.292h-27.844v-69h27.42c5.264 0 9.485.609 12.665 2.002 3.181 1.395 5.671 3.497 7.474 6.395 1.801 2.898 2.702 5.907 2.702 9.071 0 2.945-.8 5.708-2.397 8.308-1.598 2.602-4.011 4.694-7.237 6.292 4.166 1.222 7.37 3.304 9.61 6.248 2.24 2.945 3.36 6.422 3.36 10.432 0 3.227-.681 6.225-2.044 8.997z"></path>
@@ -436,16 +443,6 @@ body.dark .swiper-slide h5{color:#f1f1f1;}
 						</svg>
 						<p>photoshop</p>
 					</li>
-					<li title="aws">
-						<i class="fab fa-aws"></i>
-						<p>aws</p>
-					</li>
-					<li title="firebase">
-						<svg viewBox="0 0 366 505.71">
-							<path fill="currentColor" d="M85.1,332.18,134.94,11.59A11.42,11.42,0,0,1,156.32,8l53.59,100.59ZM439,409.92,391.56,115.05a11.41,11.41,0,0,0-19.35-6.2L73,409.92l165.56,93.32a34.15,34.15,0,0,0,33.44,0ZM304.46,152.53,266.12,79.16a11.4,11.4,0,0,0-20.24,0L77.53,380.88Z"></path>
-						</svg>
-						<p>firebase</p>
-					</li>
 					<li title="sql-database">
 						<i class="fas fa-database"></i>
 						<p>sql-database</p>
@@ -461,10 +458,6 @@ body.dark .swiper-slide h5{color:#f1f1f1;}
 						<path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M64 5.103c-33.347 0-60.388 27.035-60.388 60.388 0 26.682 17.303 49.317 41.297 57.303 3.017.56 4.125-1.31 4.125-2.905 0-1.44-.056-6.197-.082-11.243-16.8 3.653-20.345-7.125-20.345-7.125-2.747-6.98-6.705-8.836-6.705-8.836-5.48-3.748.413-3.67.413-3.67 6.063.425 9.257 6.223 9.257 6.223 5.386 9.23 14.127 6.562 17.573 5.02.542-3.903 2.107-6.568 3.834-8.076-13.413-1.525-27.514-6.704-27.514-29.843 0-6.593 2.36-11.98 6.223-16.21-.628-1.52-2.695-7.662.584-15.98 0 0 5.07-1.623 16.61 6.19C53.7 35 58.867 34.327 64 34.304c5.13.023 10.3.694 15.127 2.033 11.526-7.813 16.59-6.19 16.59-6.19 3.287 8.317 1.22 14.46.593 15.98 3.872 4.23 6.215 9.617 6.215 16.21 0 23.194-14.127 28.3-27.574 29.796 2.167 1.874 4.097 5.55 4.097 11.183 0 8.08-.07 14.583-.07 16.572 0 1.607 1.088 3.49 4.148 2.897 23.98-7.994 41.263-30.622 41.263-57.294C124.388 32.14 97.35 5.104 64 5.104z"></path><path d="M26.484 91.806c-.133.3-.605.39-1.035.185-.44-.196-.685-.605-.543-.906.13-.31.603-.395 1.04-.188.44.197.69.61.537.91zm-.743-.55M28.93 94.535c-.287.267-.85.143-1.232-.28-.396-.42-.47-.983-.177-1.254.298-.266.844-.14 1.24.28.394.426.472.984.17 1.255zm-.575-.618M31.312 98.012c-.37.258-.976.017-1.35-.52-.37-.538-.37-1.183.01-1.44.373-.258.97-.025 1.35.507.368.545.368 1.19-.01 1.452zm0 0M34.573 101.373c-.33.365-1.036.267-1.552-.23-.527-.487-.674-1.18-.343-1.544.336-.366 1.045-.264 1.564.23.527.486.686 1.18.333 1.543zm0 0M39.073 103.324c-.147.473-.825.688-1.51.486-.683-.207-1.13-.76-.99-1.238.14-.477.823-.7 1.512-.485.683.206 1.13.756.988 1.237zm0 0M44.016 103.685c.017.498-.563.91-1.28.92-.723.017-1.308-.387-1.315-.877 0-.503.568-.91 1.29-.924.717-.013 1.306.387 1.306.88zm0 0M48.614 102.903c.086.485-.413.984-1.126 1.117-.7.13-1.35-.172-1.44-.653-.086-.498.422-.997 1.122-1.126.714-.123 1.354.17 1.444.663zm0 0"></path>
 						</svg>
 						<p>github</p>
-					</li>
-					<li title="restful-apis">
-						<i class="fas fa-cogs"></i>
-						<p>restful-apis</p>
 					</li>
 				</ul>
 				<ul>
@@ -490,7 +483,7 @@ body.dark .swiper-slide h5{color:#f1f1f1;}
 							<div class="desc-inter">
 								<h2>Our Illustrations</h2>
 								<p>Website | May 2020</p>
-								<a target="_blank" href="https://goyalshubhangi.github.io/designing/"><h5 class="underScoreAnimation">Visit</h5></a>
+								<a target="_blank" href="https://goyalshubhangi.github.io/designing/"><h5 class="underScoreAnimation"><span>Visit</span></h5></a>
 							</div>
 						</div>
 						<div class="swiper-img">
@@ -502,7 +495,7 @@ body.dark .swiper-slide h5{color:#f1f1f1;}
 							<div class="desc-inter">
 								<h2>Sociovation</h2>
 								<p>Website | September 2019</p>
-								<a target="_blank" href="https://sociovation.github.io/"><h5 class="underScoreAnimation">Visit</h5></a>
+								<a target="_blank" href="https://sociovation.github.io/"><h5 class="underScoreAnimation"><span>Visit</span></h5></a>
 							</div>
 						</div>
 						<div class="swiper-img">
@@ -514,7 +507,7 @@ body.dark .swiper-slide h5{color:#f1f1f1;}
 							<div class="desc-inter">
 								<h2>George Public School</h2>
 								<p>Website | January 2020</p>
-								<a target="_blank" href="https://georgepublicschool.com/"><h5 class="underScoreAnimation">Visit</h5></a>
+								<a target="_blank" href="https://georgepublicschool.com/"><h5 class="underScoreAnimation"><span>Visit</span></h5></a>
 							</div>
 						</div>
 						<div class="swiper-img">
@@ -526,7 +519,7 @@ body.dark .swiper-slide h5{color:#f1f1f1;}
 							<div class="desc-inter">
 								<h2>Harry Potter</h2>
 								<p>Illustration | April 2020</p>
-								<a target="_blank" href="https://goyalshubhangi.github.io/designing/SVGs/Harry%20Potter.svg"><h5 class="underScoreAnimation">View</h5></a>
+								<a target="_blank" href="https://goyalshubhangi.github.io/designing/SVGs/Harry%20Potter.svg"><h5 class="underScoreAnimation"><span>View</span></h5></a>
 							</div>
 						</div>
 						<div class="swiper-img">
@@ -538,7 +531,7 @@ body.dark .swiper-slide h5{color:#f1f1f1;}
 							<div class="desc-inter">
 								<h2>Faisal Akhtar</h2>
 								<p>Illustration | May 2020</p>
-								<a target="_blank" href="https://goyalshubhangi.github.io/designing/SVGs/Faisal%20-%20sunset.svg"><h5 class="underScoreAnimation">View</h5></a>
+								<a target="_blank" href="https://goyalshubhangi.github.io/designing/SVGs/Faisal%20-%20sunset.svg"><h5 class="underScoreAnimation"><span>View</span></h5></a>
 							</div>
 						</div>
 						<div class="swiper-img">
@@ -576,10 +569,10 @@ body.dark .swiper-slide h5{color:#f1f1f1;}
 				<div class="column textBox">
 					<a href="mailto:goyalshubhangi72@gmail.com"><h1><strong>goyalshubhangi72@gmail.com</strong></h1></a>
 					<div class="social-media">
-						<a href="https://github.com/faisalAkhtar/" target="_blank"><i class="fab fa-github"></i></a>
+						<a href="https://github.com/goyalshubhangi/" target="_blank"><i class="fab fa-github"></i></a>
 						<a href="https://www.linkedin.com/in/faisallakhtarr/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-						<a href="https://www.instagram.com/faisallakhtarr/" target="_blank"><i class="fab fa-instagram"></i></a>
-						<a href="https://www.facebook.com/faisallakhtarr/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+						<a href="https://instagram.com/shubhi_9991/" target="_blank"><i class="fab fa-instagram"></i></a>
+						<a href="https://facebook.com/shubhangi.goyal.969/" target="_blank"><i class="fab fa-facebook-f"></i></a>
 					</div>
 				</div>
 				<div class="column textBox">
