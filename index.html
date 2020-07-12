@@ -26,12 +26,12 @@ nav{display:none;}
 .logo,footer{font-family:Autography;font-size:32px;color:#61dafb;font-weight:bold;}
 header p{margin:0;}
 header ul{list-style-type:none;padding:0;}
-header ul,header p:last-child{font-size:1.2rem;}
+header ul,header .leftSide:last-child p{font-size:1.2rem;}
 header ul li{padding:3.5px 0;margin:10px 0;width:fit-content;transition-duration:0.2s;border-bottom-color:transparent;border-bottom-style:solid;border-bottom-width:2px;}
 header ul li:hover{border-bottom-color:#505050;}
 header ul li.active{padding:0 0 7px 0;color:#61dafb;border-bottom-color:#61dafb;}
 header ul a{color:inherit;font-weight:600;text-decoration:none;}
-header p:last-child i{padding:6px 16px;box-shadow:0 1px 15px rgba(0,0,0,0.3), 0 1px 6px rgba(0,0,0,0.3);border-radius:40px;cursor:pointer;}
+header .leftSide:last-child p i{padding:6px 16px;box-shadow:0 1px 15px rgba(0,0,0,0.3), 0 1px 6px rgba(0,0,0,0.3);border-radius:40px;cursor:pointer;}
 
 main{width:calc(100vw - 275px);margin-left:275px;}
 .main{min-height:calc(100vh - 100px);position:relative;}
@@ -104,7 +104,7 @@ main{width:calc(100vw - 275px);margin-left:275px;}
 .swiper-slide{padding:0 50px 20px 50px;display:flex;flex-wrap:wrap;box-shadow:0 20px 30px -10px rgba(0,0,0,.2);background-color:#ffffff;}
 .swiper-slide h2{margin:10px 0;font-size:36px;line-height:40px;height:120px;}
 .swiper-slide h5{font-size:120%;margin:3.33em 0 0 0;color:#505050;}
-.swiper-slide img{width:100%;}
+.swiper-slide img{width:100%;max-width:600px;}
 .swiper-img{text-align:center;}
 .swiper-img{flex:70%;}
 .swiper-desc{flex:calc(30% - 20px);margin-right:20px;position:relative;}
@@ -119,9 +119,11 @@ footer{text-align:center;}
 }
 
 @media screen and (max-width:1050px) {
-	header{width:100%;height:100vh;position:fixed;left:200%;text-align:center;padding-top:50px;transition-duration:0.4s;}
-	header.visible{left:0;}
-	nav{display:block;width:100%;padding:10px 20px;position:fixed;z-index:2;background-color:white;}
+	.main>div button{padding:10px;width:200px;}
+	header{width:100%;height:100vh;position:fixed;left:0;transform:scale(0);text-align:center;transition-duration:0.4s;}
+	header.visible{left:0;transform:scale(1);}
+	nav{display:block;width:100%;padding:10px 20px;position:fixed;z-index:2;background-color:white;transition-duration:0.5s;}
+	nav.scrolled{padding:10px 20px 15px;box-shadow:0 10px 30px -15px rgba(0,0,0,.5);}
 	nav p{margin:0;line-height:40px;}
 	.toggleMenu{position:fixed;right:20px;top:15px;transition-duration:0.4s;z-index:10;}
 	.bar1,.bar2,.bar3{width:25px;height:3px;background-color:#505050;margin:4px 0;transition:0.4s;border-radius:25px;}
@@ -130,6 +132,7 @@ footer{text-align:center;}
 	.opened .bar2{opacity:0;}
 	.opened .bar3{-webkit-transform:rotate(45deg) translate(-6px,-5px);transform:rotate(45deg) translate(-6px,-5px);}
 	header ul li{margin:10px auto;}
+
 	main{width:100vw;margin-left:0;}
 	.verticalCentre{width:calc(100% - 40px);}
 	.homme{padding:0 20px;}
@@ -168,14 +171,23 @@ footer{text-align:center;}
 }
 
 @media screen and (max-width:1050px) and (orientation:landscape){
+	header{padding-top:25px;}
+	header hr{display:none;}
+	header ul{float:right;width:50%;margin:0;}
+	.leftSide{float:left;width:50%;padding:25px 0;}
+
 	.typing{font-size:9vh;height:20vh;}
 	.verticalCentre{width:calc(100% - 120px);}
 	.homme{padding:0 60px;}
 	.aboutme .flexBox .textBox{padding:40px;}
-	.flexBox .column img{width:auto;height:100vh;margin-right:auto;}
+	.flexBox .column img{width:auto;max-height:500px;height:100vh;margin-right:auto;}
 
 	.servicess,.toolls,.worrk,.reachhme{padding-left:30px;padding-right:30px;}
 
+	.reachhme .textBox{padding:0 40px;}
+}
+
+@media screen and (max-width:768px) and (orientation:landscape){
 	.swiper-img,.swiper-desc{flex:50%;}
 	.swiper-desc{order:1;text-align:center;margin-right:0;}
 	.swiper-img{order:2;margin-top:20px;}
@@ -183,8 +195,6 @@ footer{text-align:center;}
 	.swiper-slide{padding:0 10px 30px 10px;}
 	.swiper-slide h2{height:auto;font-size:28px;}
 	.swiper-slide h5{margin:unset;}
-
-	.reachhme .textBox{padding:0 40px;}
 }
 
 body.dark{background-color:#10151b;color:#f1f1f1;}
@@ -206,25 +216,31 @@ body.dark .swiper-slide h5{color:#f1f1f1;}
 
 <body class="dark">
 <header>
-	<p class="logo">Shubhangi Goyal</p>
-	<p>Web Developer</p>
-	<p>UX-UI Designer</p>
-	<p>Content Writer</p>
+	<div style="position:absolute;top:50%;transform:translateY(-50%);width:calc(100% - 50px);">
+		<div class="leftSide">
+			<p class="logo">Shubhangi Goyal</p>
+			<p>Web Developer</p>
+			<p>UX-UI Designer</p>
+			<p>Content Writer</p>
+		</div>
 
-	<hr>
+		<hr>
 
-	<ul>
-		<a href="#home"><li class="active">HOME</li></a>
-		<a href="#about"><li>ABOUT</li></a>
-		<a href="#services"><li>SERVICES</li></a>
-		<a href="#tools"><li>TOOLS</li></a>
-		<a href="#work"><li>WORK</li></a>
-		<a href="#reachme"><li>REACH ME</li></a>
-	</ul>
+		<ul>
+			<a href="#home"><li class="active">HOME</li></a>
+			<a href="#about"><li>ABOUT</li></a>
+			<a href="#services"><li>SERVICES</li></a>
+			<a href="#tools"><li>TOOLS</li></a>
+			<a href="#work"><li>WORK</li></a>
+			<a href="#reachme"><li>REACH ME</li></a>
+		</ul>
 
-	<hr>
+		<hr>
 
-	<p>Theme &nbsp; <i class="fas fa-moon changeTheme" onclick="changeTheme()"></i></p>
+		<div class="leftSide">
+			<p>Theme &nbsp; <i class="fas fa-moon changeTheme" onclick="changeTheme()"></i></p>
+		</div>
+	</div>
 </header>
 
 
@@ -669,6 +685,12 @@ function visibleDiv () {
 
 window.onscroll = function() {
 	visibleDiv()
+	if (document.body.scrollTop > 10 || document.documentElement.scrollTop > 10) {
+		document.querySelector("nav").classList.add("scrolled")
+	}
+	else {
+		document.querySelector("nav").classList.remove("scrolled")
+	}
 }
 
 var swiper = new Swiper('.swiper-container', {
