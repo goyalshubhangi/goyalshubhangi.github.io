@@ -1,7 +1,7 @@
-@font-face{font-family:Autography;font-style:normal;font-weight:400;src:local("Autography"),url(Autography.otf);font-display:swap}
-@font-face{font-family:Nunito;font-style:normal;font-weight:400;src:local("Nunito"),url(Nunito-Regular.ttf);font-display:swap}
-@font-face{font-family:Nunito;font-style:italic;font-weight:400;src:local("Nunito"),url(Nunito-Italic.ttf);font-display:swap}
-@font-face{font-family:Nunito;font-style:normal;font-weight:bold;src:local("Nunito"),url(Nunito-Bold.ttf);font-display:swap}
+@font-face{font-family:Autography;font-style:normal;font-weight:400;src:local("Autography"),url(../fonts/Autography.otf);font-display:swap}
+@font-face{font-family:Nunito;font-style:normal;font-weight:400;src:local("Nunito"),url(../fonts/Nunito-Regular.ttf);font-display:swap}
+@font-face{font-family:Nunito;font-style:italic;font-weight:400;src:local("Nunito"),url(../fonts/Nunito-Italic.ttf);font-display:swap}
+@font-face{font-family:Nunito;font-style:normal;font-weight:bold;src:local("Nunito"),url(../fonts/Nunito-Bold.ttf);font-display:swap}
 ::-webkit-scrollbar{width:8px;height:8px;border-radius:8px;}
 ::-webkit-scrollbar-thumb{background:#868e96;border-radius:8px;}
 *,*:after,*:before{box-sizing:border-box;-moz-box-sizing:border-box;}
