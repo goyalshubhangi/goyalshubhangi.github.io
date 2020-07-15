@@ -1,0 +1,14 @@
+body.dark{background-color:#10151b;color:#f1f1f1;}
+body.dark nav{background-color:#10151b;}
+body.dark .bar1,body.dark .bar2,body.dark .bar3{background-color:white;}
+body.dark hr{border-color:#5a5a5a;}
+body.dark header,body.dark .main:nth-child(even){background-color:#1c252d;border-color:#5a5a5a;}
+body.dark header ul li:hover{border-bottom-color:white;}
+body.dark .typing{color:white;}
+body.dark button{color:white}
+body.dark header p:last-child i{background-color:#10151b;}
+body.dark .textBox svg{fill:white;}
+body.dark .toollsList li:hover{background-color:#10151b;}
+body.dark .swiper-pagination-bullet{background:#ffffff;}
+body.dark .swiper-slide{background-color:#10151b;}
+body.dark .swiper-slide h5{color:#f1f1f1;}
