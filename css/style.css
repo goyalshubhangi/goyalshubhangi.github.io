@@ -16,6 +16,7 @@ header,.main:nth-child(even){background-color:#fbfbfb;}
 nav{display:none;}
 .logo,footer{font-family:Autography;font-size:32px;color:#61dafb;font-weight:bold;}
 header p{margin:0;}
+header>div{position:absolute;top:50%;transform:translateY(-50%);width:calc(100% - 50px);}
 header ul{list-style-type:none;padding:0;}
 header ul,header .leftSide:last-child p{font-size:1.2rem;}
 header ul li{padding:3.5px 0;margin:10px 0;width:fit-content;transition-duration:0.2s;border-bottom-color:transparent;border-bottom-style:solid;border-bottom-width:2px;}
