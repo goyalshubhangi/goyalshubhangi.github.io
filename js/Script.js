@@ -1,4 +1,4 @@
-let texts = ["Shubhangi", "UX-UI Designer", "Web Developer"], i = 0;
+let texts = ["Shubhangi", "UX-UI Designer", "Web Developer", "Content Writer"], i = 0;
 
 var writeCursor, writeText,
 	eraseText, eraseCursor

@@ -1,6 +1,7 @@
 body.dark{background-color:#10151b;color:#f1f1f1;}
 body.dark nav{background-color:#10151b;}
 body.dark .bar1,body.dark .bar2,body.dark .bar3{background-color:white;}
+body.dark .brushedUPBG{opacity:0.05;}
 body.dark hr{border-color:#5a5a5a;}
 body.dark header,body.dark .main:nth-child(even){background-color:#1c252d;border-color:#5a5a5a;}
 body.dark header ul li:hover{border-bottom-color:white;}
