@@ -60,7 +60,7 @@ main{width:calc(100vw - 275px);margin-left:275px;}
 .underScoreAnimation{cursor:pointer;display:inline-block;}
 .underScoreAnimation > span{text-decoration:none;z-index:1;position:relative;}
 .underScoreAnimation > span:before{content:"";background:#61dafb;position:absolute;width:100%;height:20%;bottom:20%;left:0;transform:scaleX(1);animation:0.25s forwards no-hover-v;z-index:-1;opacity:0.9;}
-.underScoreAnimation > span:hover:before,.underScoreAnimation > span:focus:before{animation:.25s forwards hover-v;forwards;}
+.underScoreAnimation > span:hover:before,.underScoreAnimation > span:focus:before{animation:.25s forwards hover-v;}
 @keyframes hover-v{
 	0% {transform:scaleX(1);height:20%;bottom:20%;}
 	100%{transform:scaleX(1);height:100%;bottom:0%;}
