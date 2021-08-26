@@ -75,24 +75,24 @@ main{width:calc(100vw - 275px);margin-left:275px;}
 .serviceRow{position:relative;clear:both;overflow:hidden;margin-bottom:40px;}
 .serviceIcon{width:18px;height:18px;line-height:18px;margin:auto;position:absolute;top:0;left:0;bottom:0;right:0;}
 .serviceIcon:before,.serviceIcon:after{content:"";width:100%;height:100%;border-radius:50%;position:absolute;left:0;transition:all 0.33s ease-out 0s;}
-.serviceIcon:before{background:#ffffff;border:2px solid #232323;left:3px;}
+.serviceIcon:before{background:#ffffff;border:2px solid #777777;left:3px;}
 .serviceIcon:after{border:2px solid #61dafb;left:0;}
 .serviceRow:hover .serviceIcon:before{left:0;}
 .serviceRow:hover .serviceIcon:after{left:3px;}
 .serviceImg,.serviceTxt{width:50%;}
-.serviceImg{margin-top:50px;position:relative;}
-.serviceImg:before{content:"";width:36.5%;height:2px;background:#61dafb;margin:auto 0;position:absolute;top:0;right:10px;bottom:0;}
+.serviceImg{margin-top:20px;position:relative;}
+.serviceImg:before{content:"";width:calc(50% - 100px);height:2px;background:#61dafb;margin:auto 0;position:absolute;top:0;right:10px;bottom:0;}
 .serviceRow:nth-child(even) .serviceImg{float:right;}
 .serviceRow:nth-child(even) .serviceImg:before{left:10px;}
 .serviceRow:nth-child(odd) .serviceImg{float:left;}
 .serviceRow:nth-child(odd) .serviceImg:before{right:10px;}
 .serviceRow:nth-child(even) .serviceTxt{float:left;padding:20px 50px 20px 0px;text-align:right;}
 .serviceRow:nth-child(odd) .serviceTxt{float:right;padding:20px 0px 20px 50px;text-align:left;}
-.serviceImg img{width:100px;}
+.serviceImg img{width:160px;filter:drop-shadow(0 0 2px #a1a1a1);margin:10px;}
 .serviceTxt h3{margin:0 0 15px 0;font-size:1.25rem;}
-.innerServiceImg{width:125px;height:125px;font-size:16px;text-align:center;margin:auto;z-index:1;}
-.innerServiceImg:before,.innerServiceImg:after{content:"";width:125px;height:125px;margin:0 auto;border-radius:50%;position:absolute;top:0;left:0;right:0;transition:all 0.33s ease-out 0s;}
-.innerServiceImg:before{border:2px solid #5a5a5a;left:-6px;}
+.innerServiceImg{width:180px;height:180px;font-size:16px;text-align:center;margin:auto;z-index:1;}
+.innerServiceImg:before,.innerServiceImg:after{content:"";width:180px;height:180px;margin:0 auto;border-radius:50%;position:absolute;top:0;left:0;right:0;transition:all 0.33s ease-out 0s;}
+.innerServiceImg:before{border:2px solid #777777;left:-6px;}
 .innerServiceImg:after{border:2px solid #61dafb;left:6px;}
 .serviceRow:hover .innerServiceImg:before{left:6px;}
 .serviceRow:hover .innerServiceImg:after{left:-6px;}

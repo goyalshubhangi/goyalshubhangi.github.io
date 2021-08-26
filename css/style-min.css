@@ -35,8 +35,9 @@
 	.serviceRow{margin-bottom:0;}
 	.serviceRow:nth-child(even) .serviceTxt,.serviceRow:nth-child(odd) .serviceTxt{position:static;padding:20px 0px 20px 40px;text-align:left;}
 	.serviceRow:nth-child(odd) .serviceImg:before{left:10px;}
-	.serviceImg img{width:80px;}
-	.innerServiceImg,.innerServiceImg:before,.innerServiceImg:after{width:100px;height:100px;}
+	.serviceImg:before{width:calc(50% - 87.5px);}
+	.serviceImg img{width:140px;margin:5px;}
+	.innerServiceImg,.innerServiceImg:before,.innerServiceImg:after{width:150px;height:150px;}
 
 	.toollsDiv ul{text-align:left;}
 	.toollsList li{margin:5px;}
